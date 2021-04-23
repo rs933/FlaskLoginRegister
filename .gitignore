@@ -1,0 +1,5 @@
+# project exclude path to exclude unnecessary files
+
+/venv/
+../.idea
+api
