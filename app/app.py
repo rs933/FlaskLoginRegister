@@ -13,6 +13,7 @@ app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
 app.config['MYSQL_DATABASE_PORT'] = 3306
 app.config['MYSQL_DATABASE_DB'] = 'citiesData'
+app.config['MYSQL_DATABASE_DB'] = 'tbluserInfo'
 mysql.init_app(app)
 
 
@@ -77,9 +78,26 @@ def form_delete_post(city_id):
     mysql.get_db().commit()
     return redirect("/", code=302)
 
-@app.route('/login/register/', methods=['POST', 'GET'])
-def login_register():
+@app.route('/login/register/', methods=['GET', 'POST'])
+def login_view():
+
+    if request.method == 'POST':
+        cursor = mysql.get_db().cursor()
+        inputData = (
+            request.form.get('first-name'),
+            request.form.get('last-name'),
+            request.form.get('username'),
+            request.form.get('password')
+        )
+        sql_insert_query = """INSERT INTO tbluserInfo (firstName, lastName, username, password) VALUES (%s, %s,%s, %s) """
+        cursor.execute(sql_insert_query, inputDatalogin)
+        mysql.get_db().commit()
+        return redirect('_register.html')
     return render_template('login_register.html')
+
+@app.route('/calender', methods=['GET'])
+def calender():
+    return render_template("calender.html")
 
 
 @app.route('/api/v1/cities', methods=['GET'])

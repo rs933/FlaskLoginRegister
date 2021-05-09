@@ -12,6 +12,16 @@ CREATE TABLE IF NOT EXISTS tblCitiesImport (
     `fldPopulation` INT,
     PRIMARY KEY (`id`)
 );
+
+CREATE TABLE IF NOT EXISTS tbluserInfo (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `firstName` VARCHAR(80) CHARACTER SET utf8,
+    `lastName` VARCHAR(10) CHARACTER SET utf8,
+    `username` VARCHAR(15) CHARACTER SET utf8,
+    `password` VARCHAR(15) CHARACTER SET utf8,
+    PRIMARY KEY (`id`)
+);
+
 INSERT INTO tblCitiesImport (fldName,fldLat,fldLong,fldCountry,fldAbbreviation,fldCapitalStatus,fldPopulation) VALUES
     ('New York',40.6943,-73.9249,'United States','USA','NA',19354922),
     ('Mexico City',19.4424,-99.131,'Mexico','MEX','primary',19028000),
