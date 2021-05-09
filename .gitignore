@@ -1,8 +1,7 @@
 # project exclude path to exclude unnecessary files
 
 /venv/
-../.idea
 api
 .idea
-.docx
+./flaskMyslqApi_postman.docx
 
