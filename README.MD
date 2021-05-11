@@ -8,7 +8,7 @@ Instruction to install and use this project using Docker-compose:
 4. Finally, run the app.py file using docker-compose and check your terminal
    You should see like "docker_compose_running_successfully.png" image
    
-ss
+
    
 
    
