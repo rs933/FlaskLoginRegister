@@ -1,10 +1,12 @@
-# project description
-This project is a homework assignment to teach how to get Pycharm setup with Docker, Pycharm, Flask
+Instruction to install and use this project using Docker-compose:
 
-#data table screenshot picture
-#Cities.png 
-# cities.png show the data table
+1. Clone the github repository or download the sorce file
+2. Make sure that your virtual environment is activated
+3. If you are Pycharm user, go to the run configuration option of your project and set up 
+   docker-compose
+   
+4. Finally, run the app.py file using docker-compose and check your terminal
+   You should see like "docker_compose_running_successfully.png" image
+   
 
-#Postman screenshot
-#postman.png, Checked the mysql data from postman
-
+   
